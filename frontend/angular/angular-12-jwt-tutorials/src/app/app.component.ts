@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TokenStorageService } from './_services/token-storage.service';
+import { TokenStorageService } from './services/token-storage.service';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +7,8 @@ import { TokenStorageService } from './_services/token-storage.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = "Angular12JwtAuth"
+  title = 'Angular 12 Crud';
+
   private roles: string[] = [];
   isLoggedIn = false;
   showAdminBoard = false;
