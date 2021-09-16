@@ -3,7 +3,17 @@ import TutorialDataService from "../services/tutorial.service";
 import { Link } from "react-router-dom";
 import ITutorialData from '../types/tutorial.type';
 
-type Props = {};
+// type i = 100
+
+// type k = 'sdfsdfsdf'
+
+// type j = false
+
+// type l = [1, 2, 3, "hello"]
+
+// var tutorials = [{id: 100, title: 'DDDD'}]
+
+type Props = {}
 
 type State = {
   tutorials: Array<ITutorialData>,
@@ -13,8 +23,10 @@ type State = {
 };
 
 export default class TutorialsList extends Component<Props, State>{
+  koukou: number
   constructor(props: Props) {
     super(props);
+    this.koukou = 100
     this.onChangeSearchTitle = this.onChangeSearchTitle.bind(this);
     this.retrieveTutorials = this.retrieveTutorials.bind(this);
     this.refreshList = this.refreshList.bind(this);
@@ -40,6 +52,7 @@ export default class TutorialsList extends Component<Props, State>{
     this.setState({
       searchTitle: searchTitle
     });
+    // this.searchTitle()
   }
 
   retrieveTutorials() {

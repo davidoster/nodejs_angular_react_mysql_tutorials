@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="isLoggedIn">
   <div *ngIf="currentTutorial.id" class="edit-form">
     <h4>Tutorial</h4>
     <form>
@@ -63,3 +63,4 @@
     <p>Cannot access this Tutorial...</p>
   </div>
 </div>
+<div *ngIf="!isLoggedIn"><h3>No access granted!</h3></div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TutorialService } from 'src/app/services/tutorial.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Tutorial } from 'src/app/models/tutorial.model';
+import { TokenStorageService } from '../../services/token-storage.service';
 
 @Component({
   selector: 'app-tutorial-details',
@@ -9,22 +10,26 @@ import { Tutorial } from 'src/app/models/tutorial.model';
   styleUrls: ['./tutorial-details.component.css']
 })
 export class TutorialDetailsComponent implements OnInit {
-
+  tokenStorageService: TokenStorageService
   currentTutorial: Tutorial = {
     title: '',
     description: '',
     published: false
   };
   message = '';
+  isLoggedIn = false;
 
   constructor(
     private tutorialService: TutorialService,
     private route: ActivatedRoute,
-    private router: Router) { }
+    private router: Router) { 
+      this.tokenStorageService = new TokenStorageService()
+    }
 
   ngOnInit(): void {
     this.message = '';
     this.getTutorial(this.route.snapshot.params.id);
+    this.isLoggedIn = !!this.tokenStorageService.getToken();
   }
 
   getTutorial(id: string): void {

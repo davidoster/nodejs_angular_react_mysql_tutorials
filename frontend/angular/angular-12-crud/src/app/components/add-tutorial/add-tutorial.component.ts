@@ -41,7 +41,7 @@ export class AddTutorialComponent implements OnInit {
   newTutorial(): void {
     this.submitted = false;
     this.tutorial = {
-      title: '',
+      title: 'demo title',
       description: '',
       published: false
     };

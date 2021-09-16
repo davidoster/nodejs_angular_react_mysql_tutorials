@@ -12,7 +12,7 @@ export class TutorialsListComponent implements OnInit {
   tutorials?: Tutorial[];
   currentTutorial: Tutorial = {};
   currentIndex = -1;
-  title = '';
+  title = 'Angular 12 CRUD - Tutorials List';
 
   constructor(private tutorialService: TutorialService) { }
 

@@ -36,7 +36,9 @@ class App extends Component {
             <Route path="/tutorials/:id" component={Tutorial} />
           </Switch>
         </div>
+        <div>{1+2}</div>
       </div>
+      
     );
   }
 }

@@ -58,3 +58,4 @@ function initial() {
     name: "admin"
   });
 }
+initial()

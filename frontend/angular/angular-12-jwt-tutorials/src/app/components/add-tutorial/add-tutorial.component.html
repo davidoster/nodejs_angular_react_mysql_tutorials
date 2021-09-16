@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="isLoggedIn && showAdminBoard">
   <div class="submit-form">
     <div *ngIf="!submitted">
       <div class="form-group">
@@ -33,3 +33,5 @@
     </div>
   </div>
 </div>
+<div *ngIf="!isLoggedIn"><h3>No access is granted!</h3></div>
+<div *ngIf="!showAdminBoard"><h3>No access is granted!</h3></div>
